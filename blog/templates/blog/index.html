@@ -1,0 +1,28 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block title %} HomePage {% endblock %}
+
+{% block content %}
+
+<div class="container mt-3">
+    <div class="row">
+        <div class="rol-3"></div>
+        {% include 'partials/_categories.html' %}
+        </div>
+        <div class="col-9">
+            <h1>HomePage</h1>
+            <hr>
+            {% for blog in blogs %}
+            {% if blog.is_home %}
+            {% include 'blog/partials/_blog.html' %}
+            {% endif %}
+            {% endfor %}
+
+           
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}
